@@ -10,7 +10,7 @@ const HomeSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="w-screen min-h-screen flex flex-col bg-home bg-background bg-blend-color-burn overflow-hidden"
+            className="w-full min-h-screen flex flex-col justify-center bg-home bg-background bg-blend-color-burn overflow-hidden"
         >
 
             <Header/>
