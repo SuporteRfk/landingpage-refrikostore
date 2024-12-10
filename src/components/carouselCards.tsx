@@ -99,7 +99,11 @@ const CarouselCards = () => {
       {cardsImages.map((card, index) => {
 
         // **Lógica do Fade-in**
-        // Aplica o fade-in quando a imagem está entrando pela direita.
+        // Verifica se o item está dentro do intervalo visível na tela (lado direito da janela):
+        // 1. "positions[index] >= window.innerWidth - imageWidth" 
+        //    -> O item começou a entrar na janela (borda direita).
+        // 2. "positions[index] <= window.innerWidth" 
+        //    -> O item ainda não saiu completamente da janela.
         const fadeIn = positions[index] >= window.innerWidth-imageWidth && positions[index] <= window.innerWidth ? true : false
         const opacity = 
           fadeIn ?  

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import MockupOne from "../assets/mockup.png"
 import { Header } from "./header";
-
+import { FcAndroidOs as IconAndroid} from "react-icons/fc";
 
 
 const HomeSection = () => {
@@ -10,7 +10,7 @@ const HomeSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="w-full min-h-screen flex flex-col justify-center bg-home bg-background bg-blend-color-burn overflow-hidden"
+            className="w-full min-h-screen flex flex-col justify-between bg-home bg-background bg-blend-color-burn overflow-hidden"
         >
 
             <Header/>
@@ -23,16 +23,30 @@ const HomeSection = () => {
                     <p className="text-4xl mb-1 md:text-5xl">Baixe agora</p>
                     <p className="text-accent font-medium font-main_text text-6xl mb-4 md:text-7xl">RefrikoStore</p>
                     <p className="text-lg">Faça seus pedidos online e com facilidade.</p>
-                    <a 
-                        href=""
-                        className="mt-4"
-                    >
-                        <button
-                            className="bg-accent rounded-md p-2 font-medium shadow-md shadow-[rgb(176_253_1_/_35%)] text-secundary"
+                    <div className="flex gap-4 ">
+                        {/* button donwload apk */}
+                        <a 
+                            href=""
+                            className="mt-4"
                         >
-                            Donwload Apk
-                        </button>
-                    </a>
+                            <button
+                                className="bg-accent rounded-md p-2 font-medium shadow-md shadow-[rgb(176_253_1_/_35%)] text-secundary"
+                            >
+                                Baixe o App agora
+                            </button>
+                        </a>
+                         {/* button instructions */}
+                        <a 
+                            href=""
+                            className="mt-4"
+                        >
+                            <button
+                                className="bg-cyan-600 rounded-md p-2 font-medium shadow-md shadow-slate-600 text-neutral"
+                            >
+                                Ajuda para Instalar
+                            </button>
+                        </a>
+                    </div>
                 </div>
 
                 {/* {section mockup home} */}
@@ -61,10 +75,11 @@ const HomeSection = () => {
                         <img  src={MockupOne} className="relative z-10 w-full"/>
                     </motion.div>
                 </div>
-
-
-
             </div>
+            <section className="max-w-container mx-auto">
+                <p className="p-1 text-center">Exclusivo para funcionários do Grupo Refriko.</p>
+                <p className="pb-4 flex items-center justify-center"> <IconAndroid className="text-[30px]"/> Apenas para Android. <IconAndroid className="text-[30px]"/> </p>
+            </section>
         </motion.div>
     );
 };
