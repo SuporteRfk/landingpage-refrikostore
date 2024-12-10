@@ -2,6 +2,7 @@
 import { Description } from "./components/description"
 import { HomeSection } from "./components/home"
 import { CarouselCards } from "./components/carouselCards"
+import { Footer } from "./components/footer"
 
 function App() {
   
@@ -11,7 +12,7 @@ function App() {
       <HomeSection/>
       <CarouselCards/>
       <Description/>
-      <HomeSection/>
+      <Footer/>
     </>
   )
 }
