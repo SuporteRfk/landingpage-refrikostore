@@ -28,7 +28,8 @@ export default {
       },
       backgroundImage:{
         home: "url('./src/assets/backgrounds/background.webp')",
-        description: "url('./src/assets/backgrounds/bg_description.png')"
+        description: "url('./src/assets/backgrounds/bg_description.png')",
+        download: "url('./src/assets/backgrounds/prism.png')"
       }
     },
   },
