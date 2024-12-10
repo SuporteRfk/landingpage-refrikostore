@@ -11,7 +11,7 @@ function App() {
       <HomeSection/>
       <CarouselCards/>
       <Description/>
-      
+      <HomeSection/>
     </>
   )
 }

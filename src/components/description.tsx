@@ -70,7 +70,7 @@ const Description = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-[140vh] sm:h-[130vh] bg-description bg-blend-multiply overflow-hidden flex flex-col"
+      className="h-[140vh]  bg-description bg-blend-multiply overflow-hidden flex flex-col"
     >
       {/* Título */}
       <div className="w-full max-w-container mx-auto p-4 flex flex-col items-center justify-center">

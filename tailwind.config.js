@@ -27,8 +27,8 @@ export default {
         container: '1200px', 
       },
       backgroundImage:{
-        home: "url('./src/assets/background.webp')",
-        description: "url('./src/assets/bg_description.png')"
+        home: "url('./src/assets/backgrounds/background.webp')",
+        description: "url('./src/assets/backgrounds/bg_description.png')"
       }
     },
   },
