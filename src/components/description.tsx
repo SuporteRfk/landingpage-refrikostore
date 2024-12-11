@@ -1,5 +1,5 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaMapMarkedAlt as IconMap } from "react-icons/fa";
 import { GrCatalog as IconCatalog} from "react-icons/gr";
 import { FaClock as IconClock , FaUsers as IconUsers} from "react-icons/fa6";
@@ -13,26 +13,28 @@ const Description = () => {
   // Estado para controlar a altura da barra.
   // `barHeight` começa com 0 e é atualizado dinamicamente com base no progresso do scroll.
   const [barHeight, setBarHeight] = useState(0);
-  const maxProgress = 1;  // Limite máximo de progresso da barra (95% para criar a margem de 40px do final da sessão).
+  const maxProgress = 0.95;  // Limite máximo de progresso da barra (95% para criar a margem de 40px do final da sessão).
 
   // Hook `useScroll` do Framer Motion:
   // Monitora o progresso do scroll dentro do elemento referenciado.
   const { scrollYProgress } = useScroll({
     target: sectionRef, // Observa o progresso apenas dentro do `sectionRef`.
-    offset: ["start end", "end start"], // Define quando o scroll começa e termina:
+    offset: ["start start", "end end"], // Define quando o scroll começa e termina:
     // "start end" significa: quando o topo da seção tocar a base da viewport.
     // "end start" significa: quando o final da seção tocar o topo da viewport.
   });
-
+   let newHeight = 0;
   // Hook `useMotionValueEvent`:
   // Escuta mudanças no valor do `scrollYProgress` e executa ações com base nele.
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     // Calcula a altura da barra com base no progresso.
     // `Math.min` limita a altura máxima ao valor definido por `maxProgress`.
-    const newHeight = Math.min(progress * 100, maxProgress * 100); // Limita a altura ao máximo permitido
-
+    newHeight = Math.min(progress * 100, 100); // Limita a altura ao máximo permitido
+    console.log(progress, 'pr')
+    console.log(newHeight, 'nH')
+    console.log(barHeight, 'barHei')
     // `Math.max` garante que a barra só cresça, nunca diminua.
-    setBarHeight((prevHeight) => Math.max(prevHeight, newHeight)); // Garante que a barra só aumente
+    setBarHeight((prevHeigth)=>Math.max(prevHeigth,newHeight)); // Garante que a barra só aumente
   });
 
 
@@ -70,7 +72,7 @@ const Description = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-[148vh] bg-description bg-blend-multiply overflow-hidden flex flex-col"
+      className="min-h-[180vh] bg-description bg-blend-multiply overflow-hidden flex flex-col"
     >
       {/* Título */}
       <div className="w-full max-w-container mx-auto p-4 flex flex-col items-center justify-center">
@@ -95,7 +97,7 @@ const Description = () => {
       </div>
 
       {/* Cards e barra */}
-      <div className="flex flex-col items-center relative max-w-container mx-auto h-screen max-h-full">
+      <div className="flex flex-col items-center relative max-w-container mx-auto h-[140vh] max-h-full">
         {/* Barra vertical animada */}
         <motion.div
           className="absolute w-2 bg-background top-0 rounded-lg shadow-2xl shadow-black"
