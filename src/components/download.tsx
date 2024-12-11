@@ -6,7 +6,7 @@ import IconsAppStore from "../assets/iconStore.png"
 
 const DownloadSection = () => {
   return (
-    <section id="download-section" className="h-screen bg-primary bg-download bg-blend-multiply text-neutral py-16 flex">
+    <section id="download-section" className="min-h-screen bg-primary bg-download bg-blend-multiply text-neutral py-16 flex">
       {/* Container principal */}
       <div className="w-full max-w-container mx-auto flex flex-col items-center px-4 gap-8 justify-center lg:flex-row">
         {/* Texto e botão */}

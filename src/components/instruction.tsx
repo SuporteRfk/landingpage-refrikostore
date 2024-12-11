@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import imgVideo from "../assets/placeholder.png"
 const InstructionSection = () => {
     return (
-        <section id="instruction-section" className="bg-background text-neutral  h-[115vh] lg:h-screen flex items-center">
+        <section id="instruction-section" className="bg-background text-neutral  min-h-[115vh] py-8 lg:h-screen flex items-center">
             <div className="w-full max-w-container mx-auto px-4 ">
                 {/* Título da Seção */}
                 <motion.h1
