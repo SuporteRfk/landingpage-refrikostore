@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body{
+    @apply bg-background font-regular_text text font-normal leading-loose text-[16px]
+  }
+
+}
