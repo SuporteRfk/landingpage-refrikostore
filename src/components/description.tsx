@@ -1,5 +1,5 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { FaMapMarkedAlt as IconMap } from "react-icons/fa";
 import { GrCatalog as IconCatalog} from "react-icons/gr";
 import { FaClock as IconClock , FaUsers as IconUsers} from "react-icons/fa6";
@@ -29,7 +29,7 @@ const Description = () => {
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     // Calcula a altura da barra com base no progresso.
     // `Math.min` limita a altura máxima ao valor definido por `maxProgress`.
-    newHeight = Math.min(progress * 100, 100); // Limita a altura ao máximo permitido
+    newHeight = Math.min(progress * 100, maxProgress); // Limita a altura ao máximo permitido
     console.log(progress, 'pr')
     console.log(newHeight, 'nH')
     console.log(barHeight, 'barHei')
