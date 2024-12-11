@@ -27,9 +27,9 @@ export default {
         container: '1200px', 
       },
       backgroundImage:{
-        home: "url('./src/assets/backgrounds/background.webp')",
-        description: "url('./src/assets/backgrounds/bg_description.png')",
-        download: "url('./src/assets/backgrounds/prism.png')"
+        home: "url('/backgrounds/background.webp')",
+        description: "url('/backgrounds/bg_description.png')",
+        download: "url('/backgrounds/prism.png')"
       }
     },
   },
