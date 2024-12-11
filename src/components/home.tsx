@@ -5,6 +5,14 @@ import { FcAndroidOs as IconAndroid} from "react-icons/fc";
 
 
 const HomeSection = () => {
+
+    const scrollEffect = (id:string) => {
+        const section = document.getElementById(id);
+        if(section){
+            section.scrollIntoView({behavior: "smooth"});
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -25,27 +33,23 @@ const HomeSection = () => {
                     <p className="text-lg">Faça seus pedidos online e com facilidade.</p>
                     <div className="flex gap-4 ">
                         {/* button donwload apk */}
-                        <a 
-                            href=""
-                            className="mt-4"
-                        >
+                       
                             <button
-                                className="bg-accent rounded-md p-2 font-medium shadow-md shadow-[rgb(176_253_1_/_35%)] text-secundary"
+                                onClick={() => scrollEffect("download-section")}
+                                className="mt-4 bg-accent rounded-md p-2 font-medium shadow-md shadow-[rgb(176_253_1_/_35%)] text-secundary"
                             >
                                 Baixe o App agora
                             </button>
-                        </a>
+                       
                          {/* button instructions */}
-                        <a 
-                            href=""
-                            className="mt-4"
-                        >
+                     
                             <button
-                                className="bg-cyan-600 rounded-md p-2 font-medium shadow-md shadow-slate-600 text-neutral"
+                                onClick={() => scrollEffect("instruction-section")}
+                                className="mt-4 bg-cyan-600 rounded-md p-2 font-medium shadow-md shadow-slate-600 text-neutral"
                             >
                                 Ajuda para Instalar
                             </button>
-                        </a>
+                        
                     </div>
                 </div>
 
