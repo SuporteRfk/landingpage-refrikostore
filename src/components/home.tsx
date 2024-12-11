@@ -14,16 +14,13 @@ const HomeSection = () => {
     };
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="w-full min-h-screen flex flex-col justify-between bg-home bg-background bg-blend-color-burn overflow-hidden"
-        >
-
+        <div className="w-full min-h-screen flex flex-col justify-between bg-home bg-background bg-blend-color-burn overflow-hidden">
             <Header/>
 
-            <div
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
                 className="w-full max-w-container mx-auto p-4 md:flex md:justify-between md:items-center md:my-auto"
             >
                 {/* {home text} */}
@@ -33,16 +30,16 @@ const HomeSection = () => {
                     <p className="text-lg">Faça seus pedidos online e com facilidade.</p>
                     <div className="flex gap-4 ">
                         {/* button donwload apk */}
-                       
+                    
                             <button
                                 onClick={() => scrollEffect("download-section")}
                                 className="mt-4 bg-accent rounded-md p-2 font-medium shadow-md shadow-[rgb(176_253_1_/_35%)] text-secundary"
                             >
                                 Baixe o App agora
                             </button>
-                       
-                         {/* button instructions */}
-                     
+                    
+                        {/* button instructions */}
+                    
                             <button
                                 onClick={() => scrollEffect("instruction-section")}
                                 className="mt-4 bg-cyan-600 rounded-md p-2 font-medium shadow-md shadow-slate-600 text-neutral"
@@ -79,12 +76,13 @@ const HomeSection = () => {
                         <img  src={MockupOne} className="relative z-10 w-full"/>
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
             <section className="max-w-container mx-auto">
                 <p className="p-1 text-center">Exclusivo para funcionários do Grupo Refriko.</p>
                 <p className="pb-4 flex items-center justify-center"> <IconAndroid className="text-[30px]"/> Apenas para Android. <IconAndroid className="text-[30px]"/> </p>
             </section>
-        </motion.div>
+            
+        </div>
     );
 };
 
