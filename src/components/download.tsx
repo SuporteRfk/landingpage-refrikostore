@@ -35,7 +35,7 @@ const DownloadSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            href="/download/refrikoStore.apk"
+            href="/landingpage-refrikostore/download/refrikoStore.apk"
             download="refrikoStore.apk"
             className="mt-6 bg-accent text-secundary font-medium py-3 px-8 rounded-lg shadow-md shadow-black hover:bg-primary hover:text-white transition-all"
           >
