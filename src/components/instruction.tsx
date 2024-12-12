@@ -1,6 +1,11 @@
 
 import { motion } from "framer-motion";
+import PlaceholderUsoApkVideo from "../assets/placeholder_usoApp.png"
+import PlaceholderBaixarApkVideo from "../assets/placeholder_baixaapk.png"
+
 const InstructionSection = () => {
+
+
     return (
         <section id="instruction-section" className="bg-background text-neutral  min-h-[115vh] lg:min-h-[100vh] mpy-8 lg:h-screen flex items-center">
             <div className="w-full max-w-container mx-auto px-4 ">
@@ -42,13 +47,13 @@ const InstructionSection = () => {
                             Como Baixar o App
                         </a>
                         <div className="w-full h-64 bg-slate-400 flex items-center justify-center rounded-lg">
-                            <iframe
-                                src="https://www.youtube.com/embed/c4A57Zjmb3Q"
-                                title="Como usar o App"
-                                className="w-full h-64 rounded-lg"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            <a href="https://www.youtube.com/embed/c4A57Zjmb3Q" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={PlaceholderBaixarApkVideo}
+                                    className="w-full h-64 cursor-pointer rounded-lg"
+                                    alt="imagem da thumb do youtube de como baixar o apk"
+                                />
+                            </a>
                         </div>
                     </motion.div>
 
@@ -71,13 +76,12 @@ const InstructionSection = () => {
                             
                         
                         <div className="w-full h-full bg-slate-400 flex items-center justify-center rounded-lg">
-                            <iframe
-                                src="https://www.youtube.com/embed/0j6gnxRiva8"
-                                title="Como usar o App"
-                                className="w-full h-64 rounded-lg"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            <a href="https://www.youtube.com/embed/0j6gnxRiva8" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    src={PlaceholderUsoApkVideo}
+                                    className="w-full h-64 cursor-pointer rounded-lg"
+                                />
+                            </a>
                         </div>
                     </motion.div>
                 </div>
