@@ -29,10 +29,7 @@ const Description = () => {
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
     // Calcula a altura da barra com base no progresso.
     // `Math.min` limita a altura máxima ao valor definido por `maxProgress`.
-    newHeight = Math.min(progress * 100, maxProgress); // Limita a altura ao máximo permitido
-    console.log(progress, 'pr')
-    console.log(newHeight, 'nH')
-    console.log(barHeight, 'barHei')
+    newHeight = Math.min(progress * 100, maxProgress*100); // Limita a altura ao máximo permitido
     // `Math.max` garante que a barra só cresça, nunca diminua.
     setBarHeight((prevHeigth)=>Math.max(prevHeigth,newHeight)); // Garante que a barra só aumente
   });

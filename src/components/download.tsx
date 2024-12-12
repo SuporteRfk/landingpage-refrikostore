@@ -3,8 +3,17 @@ import Mockup from "../assets/mockup_download.png"
 
 
 import IconsAppStore from "../assets/iconStore.png"
+import { useState } from "react";
 
 const DownloadSection = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  
+  const handleDownloadClick = () => {
+    setIsLoading(true); 
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 4000); 
+  };
   return (
     <section id="download-section" className="min-h-screen bg-primary bg-download bg-blend-multiply text-neutral py-16 flex">
       {/* Container principal */}
@@ -37,9 +46,22 @@ const DownloadSection = () => {
             viewport={{ once: true }}
             href="/landingpage-refrikostore/download/refrikoStore.apk"
             download="refrikoStore.apk"
-            className="mt-6 bg-accent text-secundary font-medium py-3 px-8 rounded-lg shadow-md shadow-black hover:bg-primary hover:text-white transition-all"
+            // className="mt-6 bg-accent text-secundary font-medium py-3 px-8 rounded-lg shadow-md shadow-black hover:bg-primary hover:text-white transition-all"
+            className={`mt-6 py-3 px-8 rounded-lg font-medium transition-all flex items-center gap-2 ${
+              isLoading
+                ? "bg-gray-400 cursor-not-allowed text-white"
+                : "bg-accent text-secundary hover:bg-primary hover:text-white"
+            }`}
+            onClick={handleDownloadClick}
           >
-            📥 Baixar APK
+            {isLoading ? (
+              <>
+                <div className="w-4 h-4 border-2 border-t-transparent border-neutral rounded-full animate-spin"></div>
+                Iniciando Download...
+              </>
+            ) : (
+              "📥 Baixar APK"
+            )}
           </motion.a>
 
           {/* Informação sobre lojas em breve */}
