@@ -28,7 +28,7 @@ export default {
       },
       backgroundImage:{
         home: "url('/backgrounds/background.webp')",
-        home_ios: "url('/backgrounds/background_ios.webp')",
+        home_ios: "url('/backgrounds/background_ios.png')",
         description: "url('/backgrounds/bg_description.png')",
         download: "url('/backgrounds/prism.png')"
       }

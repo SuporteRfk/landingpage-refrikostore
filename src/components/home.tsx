@@ -25,8 +25,6 @@ const HomeSection = () => {
         }
     } 
 
-   
-
     return (
         <div className={handleStyleSection()}>
             <Header/>
