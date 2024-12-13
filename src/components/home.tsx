@@ -4,6 +4,7 @@ import { Header } from "./header";
 import { FcAndroidOs as IconAndroid} from "react-icons/fc";
 
 
+
 const HomeSection = () => {
 
     const scrollEffect = (id:string) => {
@@ -12,6 +13,7 @@ const HomeSection = () => {
             section.scrollIntoView({behavior: "smooth"});
         }
     };
+
 
     const handleStyleSection = ():string =>{
         const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent);
