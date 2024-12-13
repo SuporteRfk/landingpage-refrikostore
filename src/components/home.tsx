@@ -4,6 +4,7 @@ import { Header } from "./header";
 import { FcAndroidOs as IconAndroid} from "react-icons/fc";
 
 
+
 const HomeSection = () => {
 
     const scrollEffect = (id:string) => {
@@ -13,8 +14,21 @@ const HomeSection = () => {
         }
     };
 
+
+    const handleStyleSection = ():string =>{
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        if(isIos || isSafari){
+            return 'w-full min-h-screen flex flex-col justify-between bg-home_ios overflow-hidden'
+        }else{
+            return 'w-full min-h-screen flex flex-col justify-between bg-home bg-background bg-blend-color-burn overflow-hidden'
+        }
+    } 
+
+   
+
     return (
-        <div className="w-full min-h-screen flex flex-col justify-between bg-home bg-background bg-blend-color-burn overflow-hidden">
+        <div className={handleStyleSection()}>
             <Header/>
 
             <motion.div
